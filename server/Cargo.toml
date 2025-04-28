@@ -1,0 +1,8 @@
+[package]
+name = "server"
+version.workspace = true
+edition = "2024"
+publish = false
+
+[dependencies]
+tokio.workspace = true

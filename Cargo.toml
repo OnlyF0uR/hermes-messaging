@@ -1,0 +1,30 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/crypto",
+  "crates/common",
+  "server",
+  "client",
+]
+
+[workspace.package]
+version = "0.1.0"
+
+[profile.release]
+debug = 1
+split-debuginfo = 'packed'
+strip = 'debuginfo'
+panic = 'abort'
+
+[profile.release-dbgsym]
+inherits = "release"
+split-debuginfo = 'off'
+strip = 'none'
+
+[profile.bench]
+strip = 'none'
+
+[workspace.dependencies]
+tokio = { version = "1.43.0", features = ["full"] }
+crypto = { path = "crates/crypto" }
+common = { path = "crates/common" }
