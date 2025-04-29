@@ -1,7 +1,6 @@
 [workspace]
 resolver = "2"
 members = [
-  "crates/crypto",
   "crates/common",
   "server",
   "client",
@@ -26,5 +25,5 @@ strip = 'none'
 
 [workspace.dependencies]
 tokio = { version = "1.43.0", features = ["full"] }
-crypto = { path = "crates/crypto" }
 common = { path = "crates/common" }
+pq-msg = { git = "https://github.com/OnlyF0uR/pq-msg", branch = "main" }
